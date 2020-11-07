@@ -18,11 +18,9 @@
               <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="{% url 'photos' %}">Photos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+           
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -30,7 +28,26 @@
           </form>
         </div>
       </nav>
-    
+      <div class="container">
+
+        <div class="row">
+
+        
+      
+{% for i in all %}
+<div class="col-md-3">
+<div class="card">
+  <img class="card-img-top" src="{{i.image1.url}}" alt="Card image cap" height="200px"  width="100px">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.email}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+    {% endfor %}
+    </div>
+  </div>
     Welcome
 
     <a href="{% url 'second' %}">Click here to go next page</a>

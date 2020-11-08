@@ -14,3 +14,16 @@ def photos(request):
     pics=Demo.objects.only('image1')
     
     return render(request,'photos.html',{'pics':pics})      
+
+def profile(request,id):
+    person=Demo.objects.get(id=id)
+
+    return render(request,'profile.html',{'name':person.name,'age':person.age,'pic':person.image1})    
+
+def search(request):
+    if request.method == 'GET':
+        name=request.GET.get('search')
+        person=Demo.objects.get(name=name)
+        print('person name:',person.name)
+
+    return render(request,'profile.html',{'name':person.name,'age':person.age,'pic':person.image1})        

@@ -20,7 +20,7 @@ def profile(request,id):
     person=Demo.objects.get(id=id)
 
     return render(request,'profile.html',{'name':person.name,'age':person.age,'pic':person.image1})  
-def notify(request):
+def notif(request):
     title='demo'
     notification.notify(title=title,message='this is a demo')
     return redirect('index')

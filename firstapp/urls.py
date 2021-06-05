@@ -8,5 +8,5 @@ urlpatterns=[
     path('photos/',views.photos,name='photos'),
     path('profile/<id>/',views.profile,name='profile'),
     path('search',views.search,name='search'),
-     path('notif',views.notif,name='notif')
+   
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

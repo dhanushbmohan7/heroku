@@ -34,7 +34,7 @@ def index(request):
 
 
 
-    return render(request,'index.html',{'all':all})
+    return render(request,'index.html',{'all':all,'count':count})
 
 def second(request):
     return render(request,'second.html')  
